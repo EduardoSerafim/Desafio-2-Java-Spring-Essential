@@ -19,9 +19,9 @@ public class Bloco {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant fim;
 
-    @ManyToMany(mappedBy = "blocos")
-    private Set<Atividade> atividades = new HashSet<>();
-
+    @ManyToOne
+    @JoinColumn(name = "atividade_id")
+    private Atividade atividade;
 
     public Bloco() {
     }

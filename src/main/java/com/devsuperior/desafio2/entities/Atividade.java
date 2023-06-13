@@ -28,10 +28,7 @@ public class Atividade {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-    @ManyToMany
-    @JoinTable(name = "tb_atividade_bloco",
-                joinColumns = @JoinColumn(name = "atividade_id"),
-                inverseJoinColumns = @JoinColumn(name = "bloco_id"))
+    @OneToMany(mappedBy = "atividade")
     private Set<Bloco> blocos = new HashSet<>();
 
 
